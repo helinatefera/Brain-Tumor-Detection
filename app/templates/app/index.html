@@ -1,0 +1,118 @@
+{% load static %}
+<!doctype html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Brain Tumor Detection</title>
+	<link rel="stylesheet" href=" {% static 'css/style.css' %}" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
+	<script src="{% static 'js/mobile.js' %}" type="text/javascript"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="index.html" class="logo"><img src="{% static 'images/logo.jpg' %}"  alt=""></a>
+				<ul id="navigation">
+					<li>
+						<a href="{% url 'about' %}">About</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body" class="home">
+			<div class="header">
+				<div>
+					<img src="{% static 'images/brain.png' %}" alt="" class="satellite">
+					<h1>Brain Tumor</h1>
+					<h2>Detection</h2>
+					<a href="{% url 'front' %}" class="more">Test MRI Image</a>
+					<h3>TUMOR</h3>
+					<ul>
+						<li>
+							<a href="{% url 'about' %}"><img src="{% static 'images/t1.jpeg' %}" alt=""></a>
+						</li>
+						<li>
+							<a href="{% url 'about' %}""><img src="{% static 'images/t2.jpeg' %}" alt=""></a>
+						</li>
+						<li>
+							<a href="{% url 'about' %}""><img src="{% static 'images/t3.jpeg' %}" alt=""></a>
+						</li>
+						<li>
+							<a href="{% url 'about' %}""><img src="{% static 'images/t4.jpeg' %}" alt=""></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="body">
+				<div>
+					<h1>OUR MISSION</h1>
+					<p>.............................................................................................................................................</p>
+					</div>
+			</div>
+			<div class="footer">
+				<div>
+					<ul>
+						<li>
+							<h1>Tumor Type</h1>
+							<hr>
+							<ul>
+								<li>
+									<a href="{% url 'about' %}""><img src="images/finding-planet.jpg" alt=""></a>
+									<h1>Glioma</h1>
+									<span>A glioma is a type of tumor that starts in the glial cells of the brain or the spine. Gliomas comprise about 30 percent of all brain tumors and central nervous system tumours, and 80 percent of all malignant brain tumours.</span>
+									<a href="{% url 'about' %}"" class="more">Read More</a>
+								</li>
+								<li>
+									<a href="{% url 'about' %}""><img src="images/new-satellitedish.jpg" alt=""></a>
+									<h1>Meningioma</h1>
+									<span>A meningioma is a primary central nervous system (CNS) tumor. This means it begins in the brain or spinal cord. Overall, meningiomas are the most common type of primary brain tumor. However, higher grade meningiomas are very rare.</span>
+									<a href="{% url 'about' %}"" class="more">Read More</a>
+									
+								</li>
+								<hr>
+							</ul>
+						</li>
+						<li>
+							<h1><hr></h1>
+							<ul>
+								<li>
+									<a href="blog.html"><img src="images/finding-planet.jpg" alt=""></a>
+									<h1>Pituitary adenomas</h1>
+									<span>Pituitary adenomas are tumors that occur in the pituitary gland. Most pituitary tumors are benign, approximately 35% are invasive and just 0.1% to</span>
+									<a href="blog.html" class="more">Read More</a>
+								</li>
+								<li>
+									<a href="blog.html"><img src="images/new-satellitedish.jpg" alt=""></a>
+									<h1>Glioblastoma</h1>
+									<span>Glioblastoma, previously known as glioblastoma multiforme, is the most aggressive and most common type of cancer that originates in the brain, and has very poor prognosis for survival. Initial signs and symptoms of glioblastoma are nonspecific.</span>
+									<a href="blog.html" class="more">Read More</a>
+								</li>
+								<hr>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="connect">
+				<div>
+					<h1>MORE OF OUR PRODUCTS</h1>
+					<div>
+						<a href="http://freewebsitetemplates.com/go/facebook/" class="facebook">facebook</a>
+						<a href="http://freewebsitetemplates.com/go/twitter/" class="twitter">twitter</a>
+						<a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus">googleplus</a>
+						<a href="http://pinterest.com/fwtemplates/" class="pinterest">pinterest</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

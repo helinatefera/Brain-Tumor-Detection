@@ -1,0 +1,109 @@
+import cv2
+import numpy as np
+
+# Load the MRI image
+image = cv2.imread('image.jpg', 0)
+
+# Apply Gaussian blur to remove noise
+image_blurred = cv2.GaussianBlur(image, (5, 5), 0)
+
+# Apply thresholding to highlight the potential tumor area
+_, image_thresh = cv2.threshold(image_blurred, 127, 255, cv2.THRESH_BINARY)
+
+# Find contours in the threshold image
+contours, _ = cv2.findContours(
+    image_thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+# Filter contours based on area (change 500 to a suitable value for your images)
+contours = [contour for contour in contours if cv2.contourArea(contour) > 500]
+
+# Draw contours on the original image
+image_contoured = cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
+
+# Display the image
+cv2.imshow("Detected Tumor", image_contoured)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+
+
+
+
+
+The following steps illustrate how you can accomplish displaying an image 
+uploaded by the user without saving it to a database. This is done by using
+Django's File and InMemoryUploadedFile classes. Remember the image will be
+deleted from memory once the Python process ends or a new image is uploaded.
+
+1. First, create a new Django form with an ImageField:
+
+python
+# forms.py
+from django import forms
+
+class UploadImageForm(forms.Form):
+    image = forms.ImageField()
+
+2. Next, create a view to handle the form submission:
+
+python
+# views.py
+from django.shortcuts import render
+from .forms import UploadImageForm
+from django.core.files.base import ContentFile
+from PIL import Image
+import io
+
+def upload_image_view(request):
+    if request.method == 'POST':
+        form = UploadImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            request.session['image'] = request.FILES['image'].read()
+            return render(request, 'display.html')
+
+    else:
+        form = UploadImageForm()
+    return render(request, 'upload.html', {'form': form})
+
+3. Next, create a view that will display the image uploaded:
+
+python
+# views.py
+from django.http import HttpResponse
+
+def display_image_view(request):
+    image_data = request.session['image']
+    return HttpResponse(image_data, content_type='image/jpeg')
+
+4. Finally, map the views to URLs:
+
+python
+# urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('upload/', views.upload_image_view, name='upload'),
+    path('display/', views.display_image_view, name='display'),
+]
+
+5. In your templates create upload.html:
+
+html
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Upload</button>
+</form>
+
+6. And display.html
+
+html
+<img src="{% url 'display' %}" alt="Uploaded Image">
+
+When a user uploads an image, the image data is stored in the user's session data, and when a new image is uploaded, it replaces the old image data in the 
+
+
+
+
