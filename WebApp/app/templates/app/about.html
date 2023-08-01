@@ -1,0 +1,101 @@
+{%  load static %}
+<!doctype html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Brain Tumor Detection</title>
+	<link rel="stylesheet" href=" {% static 'css/style.css' %}" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
+	<script src="{% static 'js/mobile.js' %}" type="text/javascript"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="{% url 'index' %}" class="logo"><img src="{% static 'images/logo.jpg' %}" alt=""></a>
+				<ul id="navigation">
+					<li>
+						<a href="{% url 'index' %}">Home</a>
+					</li>
+					<li>
+						<a href="{% url 'about' %}">About</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body" class="about">
+			<div class="header container">
+				<div>
+					<h1>About</h1>
+					<h2 class="typed">We are here for you .......</h2>
+					<p class="typed">We employed the automatic and reliable classification method Convolutional Neural
+						Network (CNN), specifically utilizing the VGG16 architecture. VGG16 is known for
+						its depth and performance in image recognition tasks.As a result the web application developed an effective approach to detect brain tumors using MRI image to aid in making quick, efficient, and precise decisions. The prediction accuracy was used to assess performance. In the testing data, the algorithm outperformed the current conventional approaches and Transfer Learing for detecting brain Tumors and achieved excellent accuracy.</p>
+
+					</div>
+			</div>
+			<div class="body">
+				<div>
+					<img src="{% static 'images/sadBrain.png' %}" alt=""> 	
+					<h2 style="font-size:55px;">Brain Tumor</h2>
+					<p>
+						In medical science, an anomalous and uncontrollable cell growth inside the brain is recognized as tumor. Human brain is the most receptive part of the body. It controls muscle movements and interpretation of sensory information like sight, sound, touch, taste, pain, etc.The human brain consists of Grey Matter (GM), White Matter (WM) and Cerebrospinal Fluid (CSF) and on the basis of factors like quantification of tissues, location of abnormalities, malfunctions & pathologist and diagnostic radiology, a presence of tumor is identified. A tumor in the brain can affect such sensory information and muscle movements or even results in more dangerous situation which includes death. Depending upon the place of commencing, tumor can be categorized into primary tumors and secondary tumors. If the tumor is originated inside the skull, then the tumor is known as primary brain tumor otherwise if the tumor’s initiation place is somewhere else in the body and moved towards the brain, then such tumors are called secondary tumors. The source of brain tumors can be traced back to aberrant cells forming in the brain, some of which are precancerous, some of which are cancerous or damaging, and others which are innocuous or noncancerous. 
+					</p>
+				</div>
+				<div>
+					<img src="{% static 'images/t1.jpeg' %}" alt=""> 	
+					<h2>1.GLIOMA</h2>
+					<p>
+						Glioma is a growth of cells that starts in the brain or spinal cord. The cells in a glioma look similar to healthy brain cells called glial cells. Glial cells surround nerve cells and help them function.
+
+As a glioma grows it forms a mass of cells called a tumor. The tumor can grow to press on brain or spinal cord tissue and cause symptoms. Symptoms depend on which part of the brain or spinal cord is affected.
+
+There are many types of glioma. Some grow slowly and aren't considered to be cancers. Others are considered cancerous. Another word for cancerous is malignant. Malignant gliomas grow quickly and can invade healthy brain tissue. Some types of glioma happen mostly in adults. Others happen mostly in kids.
+
+The type of glioma you have helps your health care team understand how serious your condition is and what treatments might work best. In general, glioma treatment options include surgery, radiation therapy, chemotherapy and others.
+</p>
+				</div>
+				<div>
+					<img src="{% static 'images/t2.jpeg' %}" alt=""> 	
+					<h2>2.Meningioma tumor</h2>
+					<p>
+						A meningioma is a tumor that arises from the meninges — the membranes that surround the brain and spinal cord. Although not technically a brain tumor, it is included in this category because it may compress or squeeze the adjacent brain, nerves and vessels. Meningioma is the most common type of tumor that forms in the head.
+
+Most meningiomas grow very slowly, often over many years without causing symptoms. But sometimes, their effects on nearby brain tissue, nerves or vessels may cause serious disability.
+
+Meningiomas occur more commonly in women and are often discovered at older ages, but they may occur at any age.
+
+Because most meningiomas grow slowly, often without any significant signs and symptoms, they do not always require immediate treatment and may be monitored over time.
+					</p>
+				</div>
+
+				<div>
+					<img src="{% static 'images/t1.jpeg' %}" alt=""> 	
+					<h2>3.Pituitary tumor</h2>
+					<p>
+						A pituitary tumor is an abnormal growth in the pituitary gland. The pituitary is a small gland in the brain. It is located behind the back of the nose. It makes hormones that affect many other glands and many functions in your body. Most pituitary tumors are not cancerous (benign). They don’t spread to other parts of your body. But they can cause the pituitary to make too few or too many hormones, causing problems in the body.
+
+Pituitary tumors that make too many hormones will cause other glands to make more hormones. That will cause symptoms related to each of the specific hormones. Many pituitary tumors will also press against the nearby optic nerves. This can cause vision problems.
+
+Most pituitary tumors don’t cause symptoms. As a result, they are not diagnosed. Or they are found only during a routine brain imaging test. About 25% of people may have small pituitary tumors without knowing it.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer_cont">
+			<div class="bot">
+				<div class="work">
+					<h1>More Of Our Work</h1>
+				</div>
+				<div class="icon">
+					<a href="{% static 'desktop_app.zip'%}" class="facebook" download><img src="{% static 'images/desktop.png' %}" width="40px" alt="" style="background-color: white;border-radius: 10%;"></a>
+					<a href="{% static 'mobile_app.apk'%}" class="twitter" download=""><img src="{% static 'images/mobile.png' %}" width="40px" alt=""style="background-color: white;border-radius: 10%;"></a>
+					<a href="{% url 'front' %}" class="googleplus"><img src="{% static 'images/chrome.png' %}" width="40px" alt="" style="background-color: white;border-radius: 10%;">
+				</div>
+			</div>
+		  </div>
+	</div>
+</body>
+</html>
